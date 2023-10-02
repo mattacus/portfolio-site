@@ -1,0 +1,8 @@
+.text-container {
+  background-color: #ffffff;
+  width: 400px;
+  padding: 20px;
+  color: #616161;
+  border-radius: 15px;
+  box-shadow: 2px 2px 4px 1px #1b3e59
+}
