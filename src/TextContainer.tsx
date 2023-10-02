@@ -7,7 +7,7 @@ const TextContainer = () => {
         body text, body text, body text, body text, body text, body text, body
         text, body text, body text, body text, body text, body text, body text,
         body text, body text, body text, body text, body text
-      </p>{" "}
+      </p>
     </div>
   );
 };
