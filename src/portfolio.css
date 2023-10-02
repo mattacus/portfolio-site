@@ -1,0 +1,17 @@
+.wrapper {
+  height: 100%;
+  width: 100%;
+}
+
+.message {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  top: 0;
+  display: block;
+  position: absolute;
+  color: #fff;
+  padding: 0.5em;
+}
+
