@@ -1,6 +1,6 @@
 import { Carousel } from "react-carousel-minimal";
 import { Parallax } from "react-scroll-parallax";
-import "./textcontainer.css";
+import "./imagecontainer.css";
 
 const data = [
   {
@@ -24,7 +24,7 @@ const data = [
 const ImageContainer = () => {
   return (
     <Parallax translateX={["0px", "100px"]}>
-      <div className="text-container">
+      <div className="image-container">
         <Carousel
           data={data}
           width={500}
@@ -37,13 +37,13 @@ const ImageContainer = () => {
           pauseIconSize="40px"
           slideBackgroundColor="darkgrey"
           slideImageFit="cover"
+          showNavBtn={true}
           thumbnails={false}
           thumbnailWidth="100px"
           style={{
             textAlign: "center",
             maxWidth: "850px",
             maxHeight: "300px",
-            margin: "40px auto",
           }}
         />
       </div>
