@@ -2,6 +2,7 @@ import { ReactElement } from "react";
 import TextContainer from "./TextContainer";
 import { Parallax } from "react-scroll-parallax";
 import "./portfolio.css";
+import ImageContainer from "./ImageContainer";
 
 const Portfolio = () => {
   const parallaxTest = () => {
@@ -20,7 +21,9 @@ const Portfolio = () => {
     <div className="wrapper">
       <div className="main-container">
         <h1 className="message">Portfolio Site</h1>
-        {parallaxTest()}
+        {/* {parallaxTest()} */}
+        <div style={{ height: 200 }} />
+        <ImageContainer />
       </div>
     </div>
   );
