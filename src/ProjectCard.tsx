@@ -1,22 +1,23 @@
 import React from "react";
 import "./projectCard.css";
 import { IProjectData } from "./interfaces";
+import { baseURL } from "./const";
 
 interface IProjectCardProps {
   projectData: IProjectData;
+  logos: any;
 }
 
 const ProjectCard: React.FunctionComponent<IProjectCardProps> = ({
   projectData,
+  logos,
 }) => {
-  const logo = new URL("./img/pst_logo.png", import.meta.url);
-  console.log(logo);
-  console.log(String(logo));
+  const logoPath = projectData.logo;
 
   return (
     <div className="project-card">
       <img
-        src={String(logo)}
+        src={logos[projectData.logo] ?? ""}
         style={{
           width: 250,
           height: 150,

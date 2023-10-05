@@ -4,6 +4,10 @@ import "./portfolio.css";
 import ImageContainer from "./ImageContainer";
 import ProjectCard from "./ProjectCard";
 import projects from "./data/projects.json";
+//@ts-ignore
+import * as logos from "./img/logos/*.png";
+
+console.log(logos);
 
 const Portfolio = () => {
   // const parallaxTest = () => {
@@ -27,7 +31,7 @@ const Portfolio = () => {
         {/* {parallaxTest()} */}
         <div style={{ height: 200 }} />
         {/* <ImageContainer /> */}
-        <ProjectCard projectData={testProject} />
+        <ProjectCard projectData={testProject} logos={logos} />
       </div>
     </div>
   );
