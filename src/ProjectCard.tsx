@@ -16,18 +16,25 @@ const ProjectCard: React.FunctionComponent<IProjectCardProps> = ({
 
   return (
     <div className="project-card">
-      <img
-        src={logos[projectData.logo] ?? ""}
-        style={{
-          width: 250,
-          height: 150,
-        }}
-        alt={projectData.title}
-        title={projectData.title}
-        loading="lazy"
-      />
+      <div className="project-card-header">
+        <img
+          src={`${logos[projectData.logo]}` ?? ""}
+          style={{
+            width: 100,
+            height: 50,
+            margin: 4,
+          }}
+          alt={projectData.title}
+          title={projectData.title}
+          loading="lazy"
+        />
+        <div className="project-card-titlegroup">
+          <h3 className="project-card-title">{projectData.title}</h3>
+          <h3 className="project-card-subtitle">{projectData.dates}</h3>
+        </div>
+      </div>
       {projectData.copy.map((paragraph) => (
-        <p>{paragraph}</p>
+        <p className="project-card-description">{paragraph}</p>
       ))}
     </div>
   );

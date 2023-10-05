@@ -2,10 +2,37 @@
   background-color: #f8f8f8;
   margin: 8px;
   width: 400px;
-  padding: 16px;
+  padding: 24px;
   color: #616161;
   border-radius: 15px;
   /* box-shadow: 2px 2px 4px 1px #1b3e59; */
   transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 1px -1px, rgba(0, 0, 0, 0.14) 0px 1px 1px 0px, rgba(0, 0, 0, 0.12) 0px 1px 3px 0px;
+}
+
+
+.project-card-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.project-card-titlegroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card-title {
+  color: black;
+  margin: auto;
+}
+
+.project-card-subtitle {
+  color: grey;
+  margin: auto;
+  margin-right: 0;
+}
+
+.project-card-description {
+  font-size: 1rem;
 }
