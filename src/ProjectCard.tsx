@@ -12,16 +12,13 @@ const ProjectCard: React.FunctionComponent<IProjectCardProps> = ({
   projectData,
   logos,
 }) => {
-  const logoPath = projectData.logo;
-
   return (
     <div className="project-card">
       <div className="project-card-header">
         <img
           src={`${logos[projectData.logo]}` ?? ""}
           style={{
-            width: 100,
-            height: 50,
+            height: projectData.logoHeight,
             margin: 4,
           }}
           alt={projectData.title}

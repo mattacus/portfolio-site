@@ -7,8 +7,6 @@ import projects from "./data/projects.json";
 //@ts-ignore
 import * as logos from "./img/logos/*.png";
 
-console.log(logos);
-
 const Portfolio = () => {
   // const parallaxTest = () => {
   //   let elements: ReactElement[] = [];
@@ -31,7 +29,11 @@ const Portfolio = () => {
         {/* {parallaxTest()} */}
         <div style={{ height: 200 }} />
         {/* <ImageContainer /> */}
-        <ProjectCard projectData={testProject} logos={logos} />
+        <div>
+          {projects.map((project) => {
+            return <ProjectCard projectData={project} logos={logos} />;
+          })}
+        </div>
       </div>
     </div>
   );
