@@ -29,11 +29,9 @@ const Portfolio = () => {
         {/* {parallaxTest()} */}
         <div style={{ height: 200 }} />
         {/* <ImageContainer /> */}
-        <div>
-          {projects.map((project) => {
-            return <ProjectCard projectData={project} logos={logos} />;
-          })}
-        </div>
+        {projects.map((project) => {
+          return <ProjectCard projectData={project} logos={logos} />;
+        })}
       </div>
     </div>
   );
