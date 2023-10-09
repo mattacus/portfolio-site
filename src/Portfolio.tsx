@@ -1,11 +1,11 @@
-import { ReactElement } from "react";
-import { Parallax } from "react-scroll-parallax";
-import "./portfolio.css";
-import ImageContainer from "./ImageContainer";
-import ProjectCard from "./ProjectCard";
-import projects from "./data/projects.json";
+import { ReactElement } from 'react';
+import { Parallax } from 'react-scroll-parallax';
+import './portfolio.css';
+import ImageContainer from './ImageContainer';
+import ProjectCard from './ProjectCard';
+import projects from './data/projects.json';
 //@ts-ignore
-import * as logos from "./img/logos/*.png";
+import * as logos from './img/logos/*.png';
 
 const Portfolio = () => {
   // const parallaxTest = () => {
@@ -20,18 +20,25 @@ const Portfolio = () => {
   //   return elements;
   // };
 
-  const testProject = projects[0];
-
   return (
     <div className="wrapper">
       <div className="main-container">
         <h1 className="message">Portfolio Site</h1>
         {/* {parallaxTest()} */}
-        <div style={{ height: 200 }} />
+        <div style={{ height: 16 }} />
         {/* <ImageContainer /> */}
-        {projects.map((project) => {
-          return <ProjectCard projectData={project} logos={logos} />;
-        })}
+        <div className="timeline">
+          {projects.map((project, i) => {
+            const blockPosition =
+              i % 2 === 0 ? 'timeline-block-left' : 'timeline-block-right';
+            return (
+              <div className={`timeline-block ${blockPosition}`}>
+                <div className="marker"></div>
+                <ProjectCard projectData={project} logos={logos} />{' '}
+              </div>
+            );
+          })}
+        </div>
       </div>
     </div>
   );
