@@ -1,7 +1,7 @@
-import React from "react";
-import "./projectCard.css";
-import { IProjectData } from "./interfaces";
-import { baseURL } from "./const";
+import React from 'react';
+import './projectCard.css';
+import { IProjectData } from './interfaces';
+import { baseURL } from './const';
 
 interface IProjectCardProps {
   projectData: IProjectData;
@@ -16,7 +16,7 @@ const ProjectCard: React.FunctionComponent<IProjectCardProps> = ({
     <div className="project-card">
       <div className="project-card-header">
         <img
-          src={`${logos[projectData.logo]}` ?? ""}
+          src={`${logos[projectData.logo]}` ?? ''}
           style={{
             height: projectData.logoHeight,
             margin: 4,
@@ -31,7 +31,9 @@ const ProjectCard: React.FunctionComponent<IProjectCardProps> = ({
         </div>
       </div>
       {projectData.copy.map((paragraph) => (
-        <p className="project-card-description">{paragraph}</p>
+        <p className="project-card-description" key={paragraph}>
+          {paragraph}
+        </p>
       ))}
     </div>
   );
