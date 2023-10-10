@@ -1,22 +1,33 @@
-import React from 'react';
-import './projectCard.css';
-import { IProjectData } from './interfaces';
-import { baseURL } from './const';
+import React from "react";
+import "./projectCard.css";
+import { GlobImages, IProjectData } from "./interfaces";
+import ImageContainer from "./ImageContainer";
 
 interface IProjectCardProps {
   projectData: IProjectData;
-  logos: any;
+  logoImg: string;
+  imgContent: GlobImages;
 }
+
+const getProjectImages = (fullList: GlobImages, projectList: string[]) => {
+  return projectList.reduce((result: GlobImages, current) => {
+    if (Object.keys(fullList).includes(current)) {
+      result[current] = fullList[current];
+    }
+    return result;
+  }, {});
+};
 
 const ProjectCard: React.FunctionComponent<IProjectCardProps> = ({
   projectData,
-  logos,
+  logoImg,
+  imgContent,
 }) => {
   return (
     <div className="project-card">
       <div className="project-card-header">
         <img
-          src={`${logos[projectData.logo]}` ?? ''}
+          src={`${logoImg}`}
           style={{
             height: projectData.logoHeight,
             margin: 4,
@@ -30,6 +41,13 @@ const ProjectCard: React.FunctionComponent<IProjectCardProps> = ({
           <h3 className="project-card-subtitle">{projectData.dates}</h3>
         </div>
       </div>
+      {projectData.imgContent && (
+        <div className="project-card-img-content">
+          <ImageContainer
+            images={getProjectImages(imgContent, projectData.imgContent)}
+          />
+        </div>
+      )}
       {projectData.copy.map((paragraph) => (
         <p className="project-card-description" key={paragraph}>
           {paragraph}

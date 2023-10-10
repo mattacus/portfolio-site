@@ -1,12 +1,13 @@
-import { ReactElement } from 'react';
-import { Parallax } from 'react-scroll-parallax';
-import './portfolio.css';
-import ImageContainer from './ImageContainer';
-import ProjectCard from './ProjectCard';
-import projects from './data/projects.json';
-import { useWindowSize } from 'usehooks-ts';
+import { Parallax } from "react-scroll-parallax";
+import "./portfolio.css";
+import ProjectCard from "./ProjectCard";
+import projects from "./data/projects.json";
+import { useWindowSize } from "usehooks-ts";
+import { GlobImages } from "./interfaces";
 //@ts-ignore
-import * as logos from './img/logos/*.png';
+import * as logos from "./img/logos/*.png";
+//@ts-ignore
+import * as content from "./img/content/*.png";
 
 const MOBILE_WIDTH = 768;
 
@@ -39,7 +40,7 @@ const Portfolio = () => {
             return (
               <div
                 className={`timeline-block ${
-                  isEvenItem ? 'timeline-block-left' : 'timeline-block-right'
+                  isEvenItem ? "timeline-block-left" : "timeline-block-right"
                 }`}
                 key={project.title}
               >
@@ -49,10 +50,18 @@ const Portfolio = () => {
                     translateX={[0, isEvenItem ? -5 : 5]}
                     translateY={[0, 5]}
                   >
-                    <ProjectCard projectData={project} logos={logos} />
+                    <ProjectCard
+                      projectData={project}
+                      logoImg={(logos as GlobImages)[project.logo] ?? ""}
+                      imgContent={content as GlobImages}
+                    />
                   </Parallax>
                 ) : (
-                  <ProjectCard projectData={project} logos={logos} />
+                  <ProjectCard
+                    projectData={project}
+                    logoImg={(logos as GlobImages)[project.logo] ?? ""}
+                    imgContent={content as GlobImages}
+                  />
                 )}
               </div>
             );
