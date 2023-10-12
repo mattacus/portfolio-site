@@ -12,28 +12,14 @@ import * as content from "./img/content/*.png";
 const MOBILE_WIDTH = 768;
 
 const Portfolio = () => {
-  // const parallaxTest = () => {
-  //   let elements: ReactElement[] = [];
-  //   for (let _ of Array(10).keys()) {
-  //     elements.push(
-  //       <Parallax translateX={["400px", "0px"]}>
-  //         <TextContainer />
-  //       </Parallax>
-  //     );
-  //   }
-  //   return elements;
-  // };
-
   const { width } = useWindowSize();
 
   return (
     <div className="wrapper">
       <div className="main-container">
         <h1 className="message">Portfolio Site</h1>
-        {/* {parallaxTest()} */}
-        <div style={{ height: 16 }} />
-        {/* <ImageContainer /> */}
 
+        <div style={{ height: 16 }} />
         <div className="timeline">
           {projects.map((project, i) => {
             const isEvenItem = i % 2 === 0;
@@ -54,6 +40,7 @@ const Portfolio = () => {
                       projectData={project}
                       logoImg={(logos as GlobImages)[project.logo] ?? ""}
                       imgContent={content as GlobImages}
+                      key={project.title}
                     />
                   </Parallax>
                 ) : (
@@ -61,6 +48,7 @@ const Portfolio = () => {
                     projectData={project}
                     logoImg={(logos as GlobImages)[project.logo] ?? ""}
                     imgContent={content as GlobImages}
+                    key={project.title}
                   />
                 )}
               </div>

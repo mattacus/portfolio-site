@@ -23,6 +23,7 @@ const ProjectCard: React.FunctionComponent<IProjectCardProps> = ({
   logoImg,
   imgContent,
 }) => {
+  console.log(projectData.imgContent);
   return (
     <div className="project-card">
       <div className="project-card-header">
@@ -45,14 +46,18 @@ const ProjectCard: React.FunctionComponent<IProjectCardProps> = ({
         <div className="project-card-img-content">
           <ImageContainer
             images={getProjectImages(imgContent, projectData.imgContent)}
+            projectTitle={projectData.title}
           />
         </div>
       )}
-      {projectData.copy.map((paragraph) => (
-        <p className="project-card-description" key={paragraph}>
-          {paragraph}
-        </p>
-      ))}
+      <div className="project-card-description">
+        {projectData.copy.map((paragraph) => (
+          <div key={paragraph}>
+            <p>{paragraph}</p>
+            <br />
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

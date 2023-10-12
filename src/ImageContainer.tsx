@@ -1,5 +1,4 @@
-import { Carousel } from "react-carousel-minimal";
-import "./imagecontainer.css";
+import Carousel from "./carousel/Carousel";
 import { GlobImages } from "./interfaces";
 
 const formatImageData = (imageContent: GlobImages) => {
@@ -12,13 +11,17 @@ const formatImageData = (imageContent: GlobImages) => {
 
 interface IImageContainerProps {
   images: GlobImages;
+  projectTitle: string;
 }
 
 const ImageContainer: React.FunctionComponent<IImageContainerProps> = ({
   images,
+  projectTitle,
 }) => {
   return (
+    // @ts-ignore
     <Carousel
+      idKey={projectTitle.replace(/ /g, "-")}
       data={formatImageData(images)}
       // width={500}
       height={300}
@@ -26,17 +29,10 @@ const ImageContainer: React.FunctionComponent<IImageContainerProps> = ({
       slideNumber={false}
       automatic={false}
       dots={true}
-      pauseIconColor="white"
-      pauseIconSize="40px"
-      slideBackgroundColor="darkgrey"
-      slideImageFit="cover"
+      slideBackgroundColor="#f8f8f8"
+      slideImageFit="contain"
       showNavBtn={true}
       thumbnails={false}
-      style={{
-        textAlign: "center",
-        maxWidth: "850px",
-        maxHeight: "300px",
-      }}
     />
   );
 };
