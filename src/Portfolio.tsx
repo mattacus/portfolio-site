@@ -1,19 +1,18 @@
-import { Parallax } from 'react-scroll-parallax';
-import './portfolio.css';
-import ProjectCard from './ProjectCard';
-import projects from './data/projects.json';
-import { useWindowSize } from 'usehooks-ts';
-import { GlobImages } from './interfaces';
+import "./portfolio.css";
+import ProjectCard from "./ProjectCard";
+import projects from "./data/projects.json";
+import ProfileCard from "./ProfileCard";
+import { GlobImages } from "./interfaces";
 //@ts-ignore
-import * as logos from './img/logos/*.png';
+import * as logos from "./img/logos/*.png";
 //@ts-ignore
-import * as content from './img/content/*.png';
+import * as content from "./img/content/*.png";
 
 const Portfolio = () => {
   return (
     <div className="wrapper">
       <div className="main-container">
-        <h1 className="message">Portfolio Site</h1>
+        <ProfileCard />
 
         <div style={{ height: 16 }} />
         <div className="timeline">
@@ -22,7 +21,7 @@ const Portfolio = () => {
             return (
               <div
                 className={`timeline-block ${
-                  isEvenItem ? 'timeline-block-left' : 'timeline-block-right'
+                  isEvenItem ? "timeline-block-left" : "timeline-block-right"
                 }`}
                 key={project.title}
               >
@@ -30,7 +29,7 @@ const Portfolio = () => {
                 <div className="timeline-content">
                   <ProjectCard
                     projectData={project}
-                    logoImg={(logos as GlobImages)[project.logo] ?? ''}
+                    logoImg={(logos as GlobImages)[project.logo] ?? ""}
                     imgContent={content as GlobImages}
                     key={project.title}
                   />
