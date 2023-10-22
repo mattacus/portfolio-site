@@ -106,7 +106,6 @@ function Carousel({
     if (dots[slideIndex] !== undefined) dots[slideIndex].className += " active";
   }, [slide, isPaused]);
 
-  console.log(idKey);
   return (
     <div style={style} className="box">
       <div

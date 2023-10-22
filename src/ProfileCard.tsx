@@ -23,7 +23,7 @@ const ProfileCard: React.FunctionComponent = () => {
         <h6>Skills</h6>
         <ul>
           {skills.map((skill) => (
-            <li>{skill}</li>
+            <li key={skill}>{skill}</li>
           ))}
         </ul>
       </div>
