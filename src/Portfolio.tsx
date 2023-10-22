@@ -1,19 +1,15 @@
-import { Parallax } from "react-scroll-parallax";
-import "./portfolio.css";
-import ProjectCard from "./ProjectCard";
-import projects from "./data/projects.json";
-import { useWindowSize } from "usehooks-ts";
-import { GlobImages } from "./interfaces";
+import { Parallax } from 'react-scroll-parallax';
+import './portfolio.css';
+import ProjectCard from './ProjectCard';
+import projects from './data/projects.json';
+import { useWindowSize } from 'usehooks-ts';
+import { GlobImages } from './interfaces';
 //@ts-ignore
-import * as logos from "./img/logos/*.png";
+import * as logos from './img/logos/*.png';
 //@ts-ignore
-import * as content from "./img/content/*.png";
-
-const MOBILE_WIDTH = 768;
+import * as content from './img/content/*.png';
 
 const Portfolio = () => {
-  const { width } = useWindowSize();
-
   return (
     <div className="wrapper">
       <div className="main-container">
@@ -26,31 +22,19 @@ const Portfolio = () => {
             return (
               <div
                 className={`timeline-block ${
-                  isEvenItem ? "timeline-block-left" : "timeline-block-right"
+                  isEvenItem ? 'timeline-block-left' : 'timeline-block-right'
                 }`}
                 key={project.title}
               >
                 <div className="marker" />
-                {width > MOBILE_WIDTH ? (
-                  <Parallax
-                    translateX={[0, isEvenItem ? -5 : 5]}
-                    translateY={[0, 5]}
-                  >
-                    <ProjectCard
-                      projectData={project}
-                      logoImg={(logos as GlobImages)[project.logo] ?? ""}
-                      imgContent={content as GlobImages}
-                      key={project.title}
-                    />
-                  </Parallax>
-                ) : (
+                <div className="timeline-content">
                   <ProjectCard
                     projectData={project}
-                    logoImg={(logos as GlobImages)[project.logo] ?? ""}
+                    logoImg={(logos as GlobImages)[project.logo] ?? ''}
                     imgContent={content as GlobImages}
                     key={project.title}
                   />
-                )}
+                </div>
               </div>
             );
           })}

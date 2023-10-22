@@ -18,12 +18,20 @@
   padding: 0.5em;
 }
 
+/*---------        TIMELINE       ---------*/
+
 .timeline {
   width: 80%;
   padding: 50px 0;
   margin: 50px auto;
   position: relative;
   overflow: hidden;
+}
+
+.timeline-content {
+  width: 95%;
+  padding: 0 15px;
+  color: #666;
 }
 
 .timeline:before {
@@ -47,9 +55,7 @@
   display: -moz-box;
   display: flex;
   -webkit-box-pack: justify;
-  /* -webkit-justify-content: space-between; */
   -moz-box-pack: justify;
-  /* justify-content: space-between; */
   clear: both;
 }
 
@@ -59,19 +65,19 @@
 
 .timeline-block-left {
   float: left;
+  direction: rtl;
 }
 
 .marker {
   width: 16px;
   height: 16px;
-  border-radius: 50%;
-  border: 2px solid #f5f7fa;
-  background: #42a5f5;
+  border-radius: 5%;
+  background: #ccd1d9;
   margin-top: 10px;
   z-index: 9999;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
   .timeline:before {
     left: 8px;
     width: 2px;

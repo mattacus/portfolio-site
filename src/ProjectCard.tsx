@@ -1,7 +1,7 @@
-import React from "react";
-import "./projectCard.css";
-import { GlobImages, IProjectData } from "./interfaces";
-import ImageContainer from "./ImageContainer";
+import React from 'react';
+import './projectCard.css';
+import { GlobImages, IProjectData } from './interfaces';
+import ImageContainer from './ImageContainer';
 
 interface IProjectCardProps {
   projectData: IProjectData;
@@ -25,7 +25,7 @@ const ProjectCard: React.FunctionComponent<IProjectCardProps> = ({
 }) => {
   console.log(projectData.imgContent);
   return (
-    <div className="project-card">
+    <div className="project-card float-on-hover">
       <div className="project-card-header">
         <img
           src={`${logoImg}`}
