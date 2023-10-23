@@ -1,3 +1,4 @@
+import * as React from "react";
 import "./portfolio.css";
 import ProjectCard from "./ProjectCard";
 import projects from "./data/projects.json";
@@ -11,6 +12,8 @@ import * as contentPng from "./img/content/*.png";
 import * as contentGif from "./img/content/*.gif";
 
 const Portfolio = () => {
+  const [hoverState, setHoverState] = React.useState("");
+
   return (
     <div className="wrapper">
       <div className="main-container">
@@ -27,8 +30,16 @@ const Portfolio = () => {
                 }`}
                 key={project.title}
               >
-                <div className="marker" />
-                <div className="timeline-content">
+                <div
+                  className={`marker ${
+                    hoverState === project.title ? "marker-hover" : ""
+                  }`}
+                />
+                <div
+                  className="timeline-content"
+                  onMouseEnter={() => setHoverState(project.title)}
+                  onMouseLeave={() => setHoverState("")}
+                >
                   <ProjectCard
                     projectData={project}
                     logoImg={(logos as GlobImages)[project.logo] ?? undefined}

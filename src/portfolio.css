@@ -64,9 +64,20 @@
   width: 16px;
   height: 16px;
   border-radius: 5%;
-  background: #ccd1d9;
+  background-color: #ccd1d9;
   margin-top: 10px;
   z-index: 9999;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: background-color;
+  transition-property: background-color;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+
+.marker-hover {
+  background-color: #80B085;
+
 }
 
 @media screen and (max-width: 1024px) {
