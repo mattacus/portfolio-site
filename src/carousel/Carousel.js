@@ -110,8 +110,8 @@ function Carousel({
     <div style={style} className="box">
       <div
         style={{
-          maxWidth: width ? width : "600px",
           maxHeight: height ? height : "400px",
+          maxWidth: width ? width : "600px",
         }}
       >
         <Swipe

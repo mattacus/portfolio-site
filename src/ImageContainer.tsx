@@ -25,6 +25,7 @@ const ImageContainer: React.FunctionComponent<IImageContainerProps> = ({
       idKey={projectTitle.replace(/ /g, "-")}
       data={imgData}
       height={300}
+      width={"100%"}
       radius="2px"
       slideNumber={false}
       automatic={false}
