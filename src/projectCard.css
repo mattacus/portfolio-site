@@ -6,10 +6,13 @@
   max-width: 600px;
   padding: 24px;
   color: #616161;
-  border-radius: 15px;
-  transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 1px -1px,
-    rgba(0, 0, 0, 0.14) 0px 1px 1px 0px, rgba(0, 0, 0, 0.12) 0px 1px 3px 0px;
+}
+
+.border-gradient {
+  border: 8px solid;
+  border-image-slice: 1;
+  border-width: 4px;
+  border-image-source: linear-gradient(to right, #6af0db, #5fb4f0);
 }
 
 .project-card-header {

@@ -10,14 +10,6 @@
   margin: 8px;
 }
 
-.message {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  color: #f8f8f8;
-  padding: 0.5em;
-}
-
 /*---------        TIMELINE       ---------*/
 
 .timeline {

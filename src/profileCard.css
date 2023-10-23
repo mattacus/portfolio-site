@@ -1,28 +1,28 @@
 h3 {
-	margin: 8px 0;
+  margin: 8px 0;
   margin-left: 32px;
 }
 
 h6 {
-	margin: 4px 0;
-	text-transform: uppercase;
+  margin: 4px 0;
+  text-transform: uppercase;
 }
 
 p {
   margin-left: 32px;
-	font-size: 14px;
-	line-height: 21px;
+  font-size: 14px;
+  line-height: 21px;
 }
 
 .card-container {
   width: 600px;
-	background-color: #F8F8F8;
-	box-shadow: 0px 10px 20px -10px rgba(0,0,0,0.75);
-	padding-top: 16px;
+  background-color: #f8f8f8;
+  box-shadow: 0px 10px 20px -10px rgba(0, 0, 0, 0.75);
+  padding-top: 16px;
   margin-top: 32px;
-	position: relative;
-	max-width: 100%;
-	text-align: center;
+  position: relative;
+  max-width: 100%;
+  text-align: center;
 }
 
 .card-container .round {
@@ -38,38 +38,48 @@ p {
 }
 
 button.primary {
-	background-color: #1e8ac9;
-	border: 1px solid #1e8ac9;
-	border-radius: 3px;
-	color: #231E39;
-	font-family: Roboto, 'Open Sans', 'Helvetica Neue', sans-serif;
-	font-weight: 500;
-	padding: 10px 25px;
+  cursor: pointer;
+  color: #231e39;
+  font-family: Roboto, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 500;
+  padding: 10px 25px;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(to left, #6af0db 0%, #5fb4f0 100%),
+    linear-gradient(to bottom, #6af0db 0%, #6af0db 100%),
+    linear-gradient(to right, #5fb4f0 0%, #6af0db 100%),
+    linear-gradient(to top, #5fb4f0 0%, #5fb4f0 100%);
+  background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+  border: none;
 }
 
 button.primary.ghost {
-	background-color: transparent;
-	color: #1e8ac9;
+  background-color: transparent;
+  background-image: none;
+  color: #231e39;
+  border: 8px solid;
+  border-image-slice: 1;
+  border-width: 2px;
+  border-image-source: linear-gradient(to right, #6af0db, #5fb4f0);
 }
 
 .skills {
-	background-color: #F8F8F8;
-	text-align: left;
-	padding: 15px;
-	margin-top: 30px;
+  background-color: #f8f8f8;
+  text-align: left;
+  padding: 15px;
+  margin-top: 30px;
 }
 
 .skills ul {
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 .skills ul li {
-	border: 1px solid #2D2747;
-	border-radius: 2px;
-	display: inline-block;
-	font-size: 12px;
-	margin: 0 7px 7px 0;
-	padding: 7px;
+  border: 1px solid #2d2747;
+  border-radius: 2px;
+  display: inline-block;
+  font-size: 12px;
+  margin: 0 7px 7px 0;
+  padding: 7px;
 }
