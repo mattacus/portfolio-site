@@ -5,7 +5,7 @@ import ImageContainer from "./ImageContainer";
 
 interface IProjectCardProps {
   projectData: IProjectData;
-  logoImg: string;
+  logoImg?: string;
   imgContent: GlobImages;
 }
 
@@ -26,16 +26,20 @@ const ProjectCard: React.FunctionComponent<IProjectCardProps> = ({
   return (
     <div className="project-card float-on-hover">
       <div className="project-card-header">
-        <img
-          src={`${logoImg}`}
-          style={{
-            height: projectData.logoHeight,
-            margin: 4,
-          }}
-          alt={projectData.title}
-          title={projectData.title}
-          loading="lazy"
-        />
+        {logoImg ? (
+          <img
+            src={`${logoImg}`}
+            style={{
+              height: projectData.logoHeight,
+              margin: 4,
+            }}
+            alt={projectData.title}
+            title={projectData.title}
+            loading="lazy"
+          />
+        ) : (
+          <div />
+        )}
         <div className="project-card-titlegroup">
           <h3 className="project-card-title">{projectData.title}</h3>
           <h3 className="project-card-subtitle">{projectData.dates}</h3>

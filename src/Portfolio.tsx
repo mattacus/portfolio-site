@@ -6,7 +6,9 @@ import { GlobImages } from "./interfaces";
 //@ts-ignore
 import * as logos from "./img/logos/*.png";
 //@ts-ignore
-import * as content from "./img/content/*.png";
+import * as contentPng from "./img/content/*.png";
+//@ts-ignore
+import * as contentGif from "./img/content/*.gif";
 
 const Portfolio = () => {
   return (
@@ -29,8 +31,8 @@ const Portfolio = () => {
                 <div className="timeline-content">
                   <ProjectCard
                     projectData={project}
-                    logoImg={(logos as GlobImages)[project.logo] ?? ""}
-                    imgContent={content as GlobImages}
+                    logoImg={(logos as GlobImages)[project.logo] ?? undefined}
+                    imgContent={{ ...contentPng, ...contentGif } as GlobImages}
                     key={project.title}
                   />
                 </div>
