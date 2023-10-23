@@ -1,7 +1,7 @@
-import React from 'react';
-import './projectCard.css';
-import { GlobImages, IProjectData } from './interfaces';
-import ImageContainer from './ImageContainer';
+import React from "react";
+import "./projectCard.css";
+import { GlobImages, IProjectData } from "./interfaces";
+import ImageContainer from "./ImageContainer";
 
 interface IProjectCardProps {
   projectData: IProjectData;
@@ -42,7 +42,7 @@ const ProjectCard: React.FunctionComponent<IProjectCardProps> = ({
         )}
         <div className="project-card-titlegroup">
           <h3 className="project-card-title">{projectData.title}</h3>
-          <h3 className="project-card-subtitle">{projectData.dates}</h3>
+          <h4 className="project-card-subtitle">{projectData.dates}</h4>
         </div>
       </div>
       {projectData.imgContent && (
