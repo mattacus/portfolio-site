@@ -5,7 +5,7 @@ const ProfileCard: React.FunctionComponent = () => {
   const { name, title, message_link, connect_link, skills } = profile;
   const profileImg = new URL('./img/profile/profile.jpg', import.meta.url);
   return (
-    <div className="card-container">
+    <div className="card-container border-gradient-profile">
       <img
         className="profile-img"
         src={String(profileImg)}

@@ -76,14 +76,17 @@
 }
 
 .marker-hover {
-  background-color: #80B085;
-
+  background-color: #80b085;
 }
 
 @media screen and (max-width: 1024px) {
   .timeline {
     width: 100%;
     padding: 10px 0;
+  }
+
+  .timeline-content {
+    padding: 0;
   }
 
   .timeline:before {
