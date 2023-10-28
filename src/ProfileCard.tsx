@@ -2,7 +2,7 @@ import './profileCard.css';
 import profile from './data/profile.json';
 
 const ProfileCard: React.FunctionComponent = () => {
-  const { name, title, message_link, connect_link, skills } = profile;
+  const { name, title, message_link, connect_link, bio, skills } = profile;
   const profileImg = new URL('./img/profile/profile.jpg', import.meta.url);
   return (
     <div className="card-container border-gradient-profile">
@@ -35,6 +35,9 @@ const ProfileCard: React.FunctionComponent = () => {
           Connect
         </button>
       </div>
+      <hr />
+      <p className="bio">{bio}</p>
+      <hr />
       <div className="skills">
         <h6>Skills</h6>
         <ul>
