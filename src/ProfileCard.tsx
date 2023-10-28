@@ -1,9 +1,9 @@
-import './profileCard.css';
-import profile from './data/profile.json';
+import "./profileCard.css";
+import profile from "./data/profile.json";
 
 const ProfileCard: React.FunctionComponent = () => {
   const { name, title, message_link, connect_link, bio, skills } = profile;
-  const profileImg = new URL('./img/profile/profile.jpg', import.meta.url);
+  const profileImg = new URL("./img/profile/profile.jpg", import.meta.url);
   return (
     <div className="card-container border-gradient-profile">
       <img
@@ -19,7 +19,7 @@ const ProfileCard: React.FunctionComponent = () => {
         <button
           className="primary"
           onClick={() => {
-            let a = document.createElement('a');
+            let a = document.createElement("a");
             a.href = message_link;
             a.click();
           }}
@@ -36,7 +36,11 @@ const ProfileCard: React.FunctionComponent = () => {
         </button>
       </div>
       <hr />
-      <p className="bio">{bio}</p>
+      {bio.map((b) => (
+        <p className="bio" key={b}>
+          {b}
+        </p>
+      ))}
       <hr />
       <div className="skills">
         <h6>Skills</h6>
