@@ -4,6 +4,9 @@ import profile from "./data/profile.json";
 const ProfileCard: React.FunctionComponent = () => {
   const { name, title, message_link, connect_link, bio, skills } = profile;
   const profileImg = new URL("./img/profile/profile.jpg", import.meta.url);
+  const messageIcon = new URL("./img/icons/email-48.png", import.meta.url);
+  const connectIcon = new URL("./img/icons/linkedin-48.png", import.meta.url);
+
   return (
     <div className="card-container border-gradient-profile">
       <img
@@ -24,7 +27,10 @@ const ProfileCard: React.FunctionComponent = () => {
             a.click();
           }}
         >
-          Message
+          <div className="button-inner">
+            Message
+            <img src={String(messageIcon)} alt="icon" width={24} height={24} />
+          </div>
         </button>
         <button
           className="primary"
@@ -32,7 +38,10 @@ const ProfileCard: React.FunctionComponent = () => {
             window.open(connect_link);
           }}
         >
-          Connect
+          <div className="button-inner">
+            Connect
+            <img src={String(connectIcon)} alt="icon" width={24} height={24} />
+          </div>
         </button>
       </div>
       <hr />
