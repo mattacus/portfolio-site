@@ -57,21 +57,21 @@ const ProfileCard: React.FunctionComponent = () => {
         </button>
       </div>
 
-      <hr />
+      {/* <hr />
       {bio.map((b) => (
         <p className="bio" key={b}>
           {b}
         </p>
       ))}
-      <hr />
-      <div className="skills">
+      <hr /> */}
+      {/* <div className="skills">
         <h6>Skills</h6>
         <ul>
           {skills.map((skill) => (
             <li key={skill}>{skill}</li>
           ))}
         </ul>
-      </div>
+      </div> */}
     </div>
   );
 };

@@ -1,6 +1,7 @@
 import * as React from "react";
 import "./portfolio.css";
 import ProjectCard from "./ProjectCard";
+import ProjectCardConstruction from "./ProjectCardConstruction";
 import projects from "./data/projects.json";
 import ProfileCard from "./ProfileCard";
 import { GlobImages } from "./interfaces";
@@ -20,7 +21,7 @@ const Portfolio = () => {
         <ProfileCard />
 
         <div style={{ height: 16 }} />
-        <div className="timeline">
+        {/* <div className="timeline">
           {projects.map((project, i) => {
             const isEvenItem = i % 2 === 0;
             return (
@@ -50,7 +51,8 @@ const Portfolio = () => {
               </div>
             );
           })}
-        </div>
+        </div> */}
+        <ProjectCardConstruction />
       </div>
     </div>
   );
